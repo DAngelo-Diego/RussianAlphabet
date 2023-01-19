@@ -1,10 +1,14 @@
-package com.study.russian
+package com.study.russian.presentation.screens.authActivity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
+import com.study.russian.HomeActivity
+import com.study.russian.R
 import com.study.russian.databinding.ActivityAuthBinding
 import com.study.russian.util.Constants.EMAIL
 
@@ -35,10 +39,21 @@ class AuthActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance()
                     .createUserWithEmailAndPassword(etEmail.toString(), etPassword.toString())
                     .addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            navigateToHome(it.result.user?.email ?: "")
-                        } else {
-                            showAlert()
+                        try {
+
+                            val msjError = "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account"
+
+                            if (it.isSuccessful) {
+                                navigateToHome(it.result.user?.email ?: "")
+                            } else if (it.exception?.toString()
+                                    ?.contains(msjError) == true
+                            ) {
+                                showEmailUsedAlert()
+                            } else {
+                                showFailedRegisterAlert()
+                            }
+                        } catch (e: FirebaseAuthException) {
+                            Toast.makeText(this, "Something woes wrong", Toast.LENGTH_LONG).show()
                         }
                     }
 
@@ -63,10 +78,10 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
-    private fun showAlert() {
+    private fun showFailedRegisterAlert() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Has been an error with user auth")
+        builder.setTitle("Error with the registration")
+        builder.setMessage("Has been an error with user registration or the password is too short")
         builder.setPositiveButton("Accept", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
@@ -74,9 +89,18 @@ class AuthActivity : AppCompatActivity() {
 
     private fun showWrongPasswordAlert() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Has been an error with the password")
-        builder.setPositiveButton("Accept", null)
+        builder.setTitle("Wrong Password")
+        builder.setMessage("Has been an error with the password!")
+        builder.setPositiveButton("TRY AGAIN", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showEmailUsedAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Email is already in use")
+        builder.setMessage("Another user already took the email!")
+        builder.setPositiveButton("Go back", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
