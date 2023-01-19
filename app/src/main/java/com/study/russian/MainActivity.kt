@@ -2,7 +2,6 @@ package com.study.russian
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
