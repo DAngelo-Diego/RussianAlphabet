@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Russian Alphabet</string>
+
+
+    <string name="login__title">Russian Alphabet</string>
+    <string name="login__email_hint">Email</string>
+    <string name="login__password_hint">Password</string>
+    <string name="login__login_button">Log In</string>
+    <string name="login__signup_button">Sign Up</string>
+
+    <string name="login__error_user_no_registered">There is no user registered with this email</string>
+    <string name="login__error_wrong_password">Incorrect password</string>
+    <string name="login__error_unknown_error">Something went wrong, please try again later</string>
+    <string name="login__error_enter_email">Enter your email</string>
+    <string name="login__error_enter_password">Enter your password</string>
+
+
+    <string name="signup__header">Create Account</string>
+    <string name="signup__email_hint">Email</string>
+    <string name="signup__password_hint">Password</string>
+    <string name="signup__conf_password">Confirm your password</string>
+    <string name="signup__signup_button">Sign Up</string>
+    <string name="signup__signup_successfully">Account created successfully</string>
+    <string name="signup__error_password_insecure">Your password must have at least 6 characters</string>
+    <string name="signup__error_passwords_match">Passwords do not match</string>
+    <string name="signup__error_email_already_registered">There is already an account registered with this email</string>
+    <string name="signup__error_unknown_error">Something went wrong, please try again later</string>
 </resources>

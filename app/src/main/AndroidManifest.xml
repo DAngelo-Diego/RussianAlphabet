@@ -16,7 +16,7 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.screens.authActivity.AuthActivity"
+            android:name=".presentation.screens.authScreen.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
