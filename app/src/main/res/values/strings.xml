@@ -3,10 +3,16 @@
 
 
     <string name="login__title">Russian Alphabet</string>
-    <string name="login__email_hint">Email</string>
     <string name="login__password_hint">Password</string>
+    <string name="login__email_hint">Email</string>
     <string name="login__login_button">Log In</string>
     <string name="login__signup_button">Sign Up</string>
+    <string name="start__your__journey">Start your journey</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="welcome__text">Welcome!</string>
+
+
+
 
     <string name="login__error_user_no_registered">There is no user registered with this email</string>
     <string name="login__error_wrong_password">Incorrect password</string>
@@ -25,4 +31,8 @@
     <string name="signup__error_passwords_match">Passwords do not match</string>
     <string name="signup__error_email_already_registered">There is already an account registered with this email</string>
     <string name="signup__error_unknown_error">Something went wrong, please try again later</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
