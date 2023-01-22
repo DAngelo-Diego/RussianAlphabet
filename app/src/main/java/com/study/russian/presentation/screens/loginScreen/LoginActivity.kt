@@ -2,9 +2,13 @@ package com.study.russian.presentation.screens.loginScreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.study.russian.R
 import com.study.russian.databinding.ActivityLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
      private lateinit var binding: ActivityLoginBinding
@@ -15,6 +19,5 @@ class LoginActivity : AppCompatActivity() {
         setTheme(R.style.Theme_Russia)
         val view = binding.root
         setContentView(view)
-
     }
 }

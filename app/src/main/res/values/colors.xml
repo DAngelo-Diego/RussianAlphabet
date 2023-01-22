@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="semiWhite">#ADFFFFFF</color>
+    <color name="blueScreen">#2D51AE</color>
+    <color name="signUp">#E2F2FF</color>
+    <color name="logInBtn">#193599</color>
+    <color name="license">#FFDE7C</color>
+
+
+
 </resources>
